@@ -154,6 +154,11 @@ h1 {
 	text-align: center;
 }
 
+a {
+	text-decoration: none;
+	color: black;
+}
+
 .mainCatTitle {
 	background-color: red;
 	min-height: 200px;
@@ -163,4 +168,5 @@ h1 {
 	width: 28vw;
 	margin: 30px;
 	text-align: center;
+	text-decoration: none;
 }
