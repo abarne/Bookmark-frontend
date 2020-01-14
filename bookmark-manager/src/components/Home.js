@@ -17,9 +17,10 @@ const Home = () => {
 		//eslint-disable-next-line
 	}, []);
 
-	function handleSubmit() {
+	async function handleSubmit() {
 		//event.preventDefault();
-		addMain(newMain);
+		await addMain(newMain);
+		//window.location.reload(true);
 	}
 
 	if (mainCats.length === 0) {
