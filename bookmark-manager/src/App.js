@@ -8,7 +8,7 @@ import SubCat from './components/SubCat.js';
 import { Route } from 'react-router-dom';
 
 const store = createStore(model);
-//
+
 function App() {
 	return (
 		<StoreProvider store={store}>
