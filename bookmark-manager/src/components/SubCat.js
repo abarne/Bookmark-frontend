@@ -19,13 +19,30 @@ const SubCat = (props) => {
 
 	async function handleSubmit() {
 		//event.preventDefault();
-		await addSub(newSub);
+		const newSubSend = {
+			title: newSub,
+			mainId: props.match.params.id
+		};
+		console.log(newSubSend);
+		await addSub(newSubSend);
 		//window.location.reload(true);
 	}
 
-	if (subCats.length === 0) {
-		return <h1>You have no bookmark categories set yet</h1>;
+	if (!subCats) {
+		return <h1>no subcat store state</h1>;
 	}
+	// if (subCats.length === 0) {
+	// 	return (
+	// 		<div>
+	// 			<h1>You have no bookmark categories set yet, add some now!</h1>
+	// 			<label>
+	// 				New Category:{' '}
+	// 				<input className="mainCatInput" type="text" onChange={(e) => setNewSub(e.target.value)} />
+	// 			</label>
+	// 			<button onClick={() => handleSubmit()}>Submit New Category</button>
+	// 		</div>
+	// 	);
+	// }
 
 	return (
 		<div>

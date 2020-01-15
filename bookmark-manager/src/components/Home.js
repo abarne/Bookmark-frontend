@@ -23,8 +23,19 @@ const Home = () => {
 		//window.location.reload(true);
 	}
 
-	if (mainCats.length === 0) {
-		return <h1>You have no bookmark categories set yet</h1>;
+	if (!mainCats) {
+		return <h1>Loading...</h1>;
+	} else if (mainCats.length === 0) {
+		return (
+			<div>
+				<h1>You have no bookmark categories set yet, add some now!</h1>
+				<label>
+					New Category:{' '}
+					<input className="mainCatInput" type="text" onChange={(e) => setNewMain(e.target.value)} />
+				</label>
+				<button onClick={() => handleSubmit()}>Submit New Category</button>
+			</div>
+		);
 	}
 
 	return (
